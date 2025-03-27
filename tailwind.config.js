@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#8F0EFC",
+        primary: "#6431F4",
         secondary: "#F1F1F1",
         hover: "#00FFF7",
         highlight: "#FCE94F	",
@@ -17,7 +17,7 @@ export default {
         background: "#121212",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"], // Add Inter font
+        inter: ["Inter", "sans-serif"],
         sans: ["Outfit", "sans-serif"],
       },
       fontWeight: {
@@ -27,6 +27,15 @@ export default {
         semibold: "600",
         bold: "700",
         extrabold: "800",
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
     },
   },
