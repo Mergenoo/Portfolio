@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/images/Logo.svg", // ✅ No "public/"
+        },
+        {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap",
         },
