@@ -4,7 +4,7 @@
       <!-- 📸 Resume as Image -->
       <div class="w-full">
         <img
-          src="/images/mergen_resume.jpg"
+          src="/images/resume.jpg"
           alt="My Resume"
           class="w-full rounded-lg shadow-lg border border-white/10"
         />
