@@ -9,6 +9,11 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["@/assets/css/main.css"],
+  runtimeConfig: {
+    public: {
+      geminiApiKey: process.env.GEMINI_API_KEY,
+    },
+  },
   app: {
     head: {
       link: [
