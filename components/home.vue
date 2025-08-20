@@ -28,14 +28,8 @@
     <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 z-10">
       Hey there,<br />
       I am Mergen Ochirsukh,<br />
-      a frontend developer.
+      a software developer.
     </h1>
-
-    <!-- Subtext -->
-    <p class="text-gray-400 max-w-xl mx-auto text-lg mb-10 z-10">
-      I bring ideas to life through clean code, creative interaction, and a
-      passion for frontend. Let’s build something unforgettable.
-    </p>
 
     <div
       class="flex items-center justify-center gap-3 my-6 mx-2 w-full max-w-md"

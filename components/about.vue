@@ -24,7 +24,7 @@ const scrollToSection = (id: string) => {
       <div class="w-full md:w-1/2">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
         <p class="text-gray-300 mb-4 leading-relaxed">
-          I'm Mergen Ochirsukh — a frontend developer with a passion for
+          I'm Mergen Ochirsukh — a software developer with a passion for
           crafting smooth, responsive, and visually engaging interfaces. I love
           clean code, subtle animations, and making things feel just right.
         </p>

@@ -14,7 +14,7 @@
       <div class="flex flex-col justify-between">
         <p class="text-gray-400 text-lg mb-6 leading-relaxed">
           I’m always open to new challenges and collaborations. If you’re
-          looking for a passionate frontend developer to bring your ideas to
+          looking for a passionate software developer to bring your ideas to
           life — let’s chat and make it happen.
         </p>
         <a

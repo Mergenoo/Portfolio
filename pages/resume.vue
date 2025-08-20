@@ -42,14 +42,14 @@
 <script setup lang="ts">
 const experiences = [
   {
-    title: "Frontend Developer",
+    title: "Software Developer",
     company: "Dentsu Data Artist Mongolia",
     period: "2024 — Present",
     description:
       "Building interactive web applications using Nuxt, Vue, and Tailwind. Collaborating on design systems, micro-interactions, and contributing to scalable front-end architecture.",
   },
   {
-    title: "Frontend Intern",
+    title: "Software Developer Intern",
     company: "Erxes",
     period: "2024",
     description:

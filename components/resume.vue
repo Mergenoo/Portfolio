@@ -45,14 +45,14 @@
 <script setup lang="ts">
 const experience = [
   {
-    role: "Frontend Developer",
+    role: "Software Developer",
     company: "Dentsu Data Artist Mongolia",
     period: "2024 — Present",
     description:
       "Building interactive web apps with Nuxt, Vue, and Tailwind. Collaborating on design systems and micro-interactions.",
   },
   {
-    role: "Frontend Intern",
+    role: "Software Developer Intern",
     company: "Erxes",
     period: "2024",
     description:
