@@ -2,6 +2,16 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Environment Setup
+
+This application uses Google's Gemini AI for chat functionality. You need to set up an API key:
+
+1. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a `.env` file in the root directory
+3. Add your API key: `GEMINI_API_KEY=your_actual_api_key_here`
+
+**Important**: Never commit your `.env` file to version control. It's already in `.gitignore`.
+
 ## Setup
 
 Make sure to install dependencies:
