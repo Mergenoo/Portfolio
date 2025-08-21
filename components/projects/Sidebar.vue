@@ -150,6 +150,11 @@ const projects = [
 const selectProject = (projectTitle) => {
   // Emit event to parent component
   emit("project-selected", projectTitle);
+
+  // Auto-collapse sidebar when project is selected
+  if (isCollapsed.value === false) {
+    isCollapsed.value = true;
+  }
 };
 
 const toggleSidebar = () => {
