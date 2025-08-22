@@ -3,7 +3,9 @@
     <!-- Project Header -->
     <div class="mb-8">
       <div class="flex items-center gap-4 mb-4">
-        <h1 class="text-4xl font-bold text-white">Project DDAM</h1>
+        <h1 class="text-4xl font-bold text-white">
+          Dentsu Data Artist Mongolia (DDAM)
+        </h1>
         <span
           class="px-3 py-1 text-sm font-medium rounded-full bg-green-500/20 text-green-400 border border-green-500/30"
         >
@@ -11,8 +13,10 @@
         </span>
       </div>
       <p class="text-xl text-gray-300 leading-relaxed">
-        A web application that uses machine learning to detect Alzheimer's
-        disease from MRI images.
+        At DDAM, I worked on a variety of AI-focused projects, highlighted by
+        the Google Workshop initiative. I explored how Google AI technologies
+        could be applied to real-world product workflows and showcased their
+        potential through practical, hands-on demonstrations.
       </p>
     </div>
 
@@ -21,73 +25,121 @@
       <!-- Main Content -->
       <div class="lg:col-span-2 space-y-8">
         <!-- Project Image/Preview -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="text-xl font-semibold text-white mb-4">Project Preview</h3>
-          <div
-            class="bg-white/5 border border-white/10 rounded-xl h-64 flex items-center justify-center"
-          >
-            <p class="text-gray-400">DDAM Project Screenshot</p>
-          </div>
-        </div>
 
-        <!-- Features -->
+        <!-- Key Highlights -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="text-xl font-semibold text-white mb-4">Key Features</h3>
-          <ul class="space-y-3">
+          <h3 class="text-xl font-semibold text-white mb-4">Key Highlights</h3>
+          <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <div
                 class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"
               ></div>
-              <span class="text-gray-300"
-                >Machine learning model for disease detection</span
-              >
+              <div>
+                <span class="text-white font-medium"
+                  >Google Workshop Projects</span
+                >
+                <p class="text-gray-400 text-sm mt-1">
+                  Showcased practical applications of Google AI to demonstrate
+                  how businesses and developers can leverage it effectively.
+                  Designed workflows that applied AI across multiple stages of
+                  product interaction — from updating existing product data to
+                  creating new, AI‑enhanced outputs.
+                </p>
+              </div>
             </li>
             <li class="flex items-start gap-3">
               <div
                 class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"
               ></div>
-              <span class="text-gray-300">Real-time image processing</span>
+              <div>
+                <span class="text-white font-medium"
+                  >Generative AI Applications</span
+                >
+                <p class="text-gray-400 text-sm mt-1">
+                  Used text‑based AI models to generate optimized product
+                  descriptions and enhance prompts for higher‑quality outputs,
+                  demonstrating how automation and creativity can be combined
+                  with Google AI.
+                </p>
+              </div>
             </li>
             <li class="flex items-start gap-3">
               <div
                 class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"
               ></div>
-              <span class="text-gray-300"
-                >User-friendly interface for medical professionals</span
-              >
+              <div>
+                <span class="text-white font-medium"
+                  >Google Image AI Integration</span
+                >
+                <p class="text-gray-400 text-sm mt-1">
+                  Leveraged Google’s Image AI to generate new product images,
+                  search and identify similar products, and provide side‑by‑side
+                  comparisons highlighting pros and cons of alternatives to
+                  improve decision‑making and presentation.
+                </p>
+              </div>
             </li>
             <li class="flex items-start gap-3">
               <div
                 class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"
               ></div>
-              <span class="text-gray-300">Comprehensive reporting system</span>
+              <div>
+                <span class="text-white font-medium">Innovation Impact</span>
+                <p class="text-gray-400 text-sm mt-1">
+                  Positioned DDAM as a pioneer in applying Google AI to
+                  practical use cases in Mongolia. Helped participants see how
+                  AI can reduce manual work, enhance creativity, and improve
+                  user experiences through interactive demos.
+                </p>
+              </div>
             </li>
           </ul>
         </div>
 
-        <!-- Project Details -->
+        <!-- Experience Details -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
           <h3 class="text-xl font-semibold text-white mb-4">
-            Project Overview
+            Experience Overview
           </h3>
           <div class="space-y-4">
             <div>
-              <h4 class="text-lg font-medium text-white mb-2">About DDAM</h4>
+              <h4 class="text-lg font-medium text-white mb-2">
+                About the Google Workshop Initiative
+              </h4>
               <p class="text-gray-300">
-                DDAM is an innovative medical imaging application that leverages
-                advanced machine learning algorithms to assist healthcare
-                professionals in early detection of Alzheimer's disease. The
-                system processes MRI scans and provides accurate diagnostic
-                predictions with high confidence levels.
+                Demonstrated end‑to‑end applications of Google AI across the
+                product cycle: update, generate, enhance, and compare. Each demo
+                was designed to be hands‑on, revealing both the strengths and
+                limitations of AI in realistic scenarios.
               </p>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-white mb-2">Impact</h4>
-              <p class="text-gray-300">
-                This project has the potential to significantly improve early
-                diagnosis rates, leading to better treatment outcomes and
-                improved quality of life for patients and their families.
-              </p>
+              <h4 class="text-lg font-medium text-white mb-2">
+                Why It Stands Out
+              </h4>
+              <ul class="space-y-2 text-gray-300">
+                <li>
+                  <span class="text-primary font-medium"
+                    >End‑to‑End AI Demonstration:</span
+                  >
+                  Showed how Google AI could be applied across the full product
+                  cycle.
+                </li>
+                <li>
+                  <span class="text-primary font-medium"
+                    >Balanced Perspective:</span
+                  >
+                  Provided pros and cons of AI‑generated results to highlight
+                  opportunities and caution areas.
+                </li>
+                <li>
+                  <span class="text-primary font-medium"
+                    >Practical Innovation:</span
+                  >
+                  Translated cutting‑edge AI into accessible, real‑world
+                  applications.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -103,63 +155,42 @@
           <div class="flex flex-wrap gap-2">
             <span
               class="px-3 py-2 text-sm bg-white/10 text-white/80 rounded-lg border border-white/20"
+              >Google AI</span
             >
-              Nuxt
-            </span>
             <span
               class="px-3 py-2 text-sm bg-white/10 text-white/80 rounded-lg border border-white/20"
+              >Vertex AI</span
             >
-              Tailwind
-            </span>
             <span
               class="px-3 py-2 text-sm bg-white/10 text-white/80 rounded-lg border border-white/20"
+              >Generative AI</span
             >
-              Generative AI
-            </span>
             <span
               class="px-3 py-2 text-sm bg-white/10 text-white/80 rounded-lg border border-white/20"
+              >Imagen</span
             >
-              OpenAI API
-            </span>
+            <span
+              class="px-3 py-2 text-sm bg-white/10 text-white/80 rounded-lg border border-white/20"
+              >Prompt Engineering</span
+            >
           </div>
         </div>
 
-        <!-- Project Links -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Project Links</h3>
-          <div class="space-y-3">
-            <a
-              href="#"
-              class="flex items-center gap-3 p-3 bg-primary/20 text-primary border border-primary/30 rounded-lg hover:bg-primary/30 transition-colors"
-            >
-              <Icon name="mdi:github" class="w-5 h-5" />
-              <span>View on GitHub</span>
-            </a>
-            <a
-              href="#"
-              class="flex items-center gap-3 p-3 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors"
-            >
-              <Icon name="mdi:open-in-new" class="w-5 h-5" />
-              <span>Live Demo</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Stats -->
+        <!-- Experience Stats -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
           <h3 class="text-lg font-semibold text-white mb-4">Project Stats</h3>
           <div class="space-y-3">
             <div class="flex justify-between">
               <span class="text-gray-400">Status</span>
-              <span class="text-green-400">Completed</span>
+              <span class="text-yellow-400">Completed</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-400">Type</span>
+              <span class="text-white">AI-Powered SaaS</span>
             </div>
             <div class="flex justify-between">
               <span class="text-gray-400">Duration</span>
-              <span class="text-white">3 months</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-gray-400">Team Size</span>
-              <span class="text-white">3 developers</span>
+              <span class="text-white">1 month</span>
             </div>
           </div>
         </div>
