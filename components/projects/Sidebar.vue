@@ -34,7 +34,7 @@
       :class="{ 'opacity-0': isCollapsed && !isHovered }"
     >
       <h2 class="text-white text-2xl font-bold text-left whitespace-nowrap">
-        Projects
+        Experiences
       </h2>
       <p class="text-gray-400 text-sm mt-2 whitespace-nowrap">
         Select a project to view details
@@ -43,32 +43,80 @@
 
     <!-- Projects List -->
     <div class="overflow-auto h-[calc(100vh-140px)] pr-2">
-      <div
-        v-for="project in projects"
-        :key="project.title"
-        class="group cursor-pointer transition-all duration-200 py-3 px-2 border-l-2 border-transparent hover:border-primary/50"
-        :class="{
-          'border-l-primary bg-white/5':
-            selectedProject === project.title && !isCollapsed,
-        }"
-        @click="selectProject(project.title)"
-      >
-        <!-- Project Item -->
-        <div class="flex flex-col">
-          <h3
-            class="text-white/90 font-medium text-base group-hover:text-white transition-colors duration-200 whitespace-nowrap overflow-hidden"
-            :class="{ 'opacity-0': isCollapsed && !isHovered }"
-          >
-            {{ project.title }}
-          </h3>
-
-          <!-- Enter Arrow -->
-          <div class="flex justify-end mt-1">
-            <Icon
-              name="mdi:keyboard-return"
-              class="w-6 h-6 text-white/40 group-hover:text-primary transition-all duration-200 group-hover:translate-x-0.5"
+      <!-- Work Section -->
+      <div v-if="workProjects.length > 0" class="mb-6">
+        <h3
+          class="text-white/60 text-sm font-medium mb-3 transition-all duration-300"
+          :class="{ 'opacity-0': isCollapsed && !isHovered }"
+        >
+          Work
+        </h3>
+        <div
+          v-for="project in workProjects"
+          :key="project.title"
+          class="group cursor-pointer transition-all duration-200 py-3 px-2 border-l-2 border-transparent hover:border-primary/50"
+          :class="{
+            'border-l-primary bg-white/5':
+              selectedProject === project.title && !isCollapsed,
+          }"
+          @click="selectProject(project.title)"
+        >
+          <!-- Project Item -->
+          <div class="flex flex-col">
+            <h3
+              class="text-white/90 font-medium text-base group-hover:text-white transition-colors duration-200 whitespace-nowrap overflow-hidden"
               :class="{ 'opacity-0': isCollapsed && !isHovered }"
-            />
+            >
+              {{ project.title }}
+            </h3>
+
+            <!-- Enter Arrow -->
+            <div class="flex justify-end mt-1">
+              <Icon
+                name="mdi:keyboard-return"
+                class="w-6 h-6 text-white/40 group-hover:text-primary transition-all duration-200 group-hover:translate-x-0.5"
+                :class="{ 'opacity-0': isCollapsed && !isHovered }"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div v-if="projectProjects.length > 0">
+        <h3
+          class="text-white/60 text-sm font-medium mb-3 transition-all duration-300"
+          :class="{ 'opacity-0': isCollapsed && !isHovered }"
+        >
+          Projects
+        </h3>
+        <div
+          v-for="project in projectProjects"
+          :key="project.title"
+          class="group cursor-pointer transition-all duration-200 py-3 px-2 border-l-2 border-transparent hover:border-primary/50"
+          :class="{
+            'border-l-primary bg-white/5':
+              selectedProject === project.title && !isCollapsed,
+          }"
+          @click="selectProject(project.title)"
+        >
+          <!-- Project Item -->
+          <div class="flex flex-col">
+            <h3
+              class="text-white/90 font-medium text-base group-hover:text-white transition-colors duration-200 whitespace-nowrap overflow-hidden"
+              :class="{ 'opacity-0': isCollapsed && !isHovered }"
+            >
+              {{ project.title }}
+            </h3>
+
+            <!-- Enter Arrow -->
+            <div class="flex justify-end mt-1">
+              <Icon
+                name="mdi:keyboard-return"
+                class="w-6 h-6 text-white/40 group-hover:text-primary transition-all duration-200 group-hover:translate-x-0.5"
+                :class="{ 'opacity-0': isCollapsed && !isHovered }"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -97,7 +145,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const props = defineProps({
   selectedProject: {
@@ -109,10 +157,20 @@ const props = defineProps({
 const isCollapsed = ref(false);
 const isHovered = ref(false);
 
+// Computed properties to filter projects by type
+const workProjects = computed(() =>
+  projects.filter((project) => project.type === "Work")
+);
+
+const projectProjects = computed(() =>
+  projects.filter((project) => project.type === "project")
+);
+
 const projects = [
   {
     title: "Beautifull Done",
     status: "On process",
+    type: "project",
     description:
       "A web application that uses machine learning to detect Alzheimer's disease from MRI images.",
     tags: [
@@ -127,6 +185,7 @@ const projects = [
   {
     title: "Project DDAM",
     status: "Completed",
+    type: "Work",
     description:
       "A web application that uses machine learning to detect Alzheimer's disease from MRI images.",
     tags: ["Nuxt", "Tailwind", "Generative AI", "OpenAI API"],
@@ -134,6 +193,7 @@ const projects = [
   {
     title: "Ebuuhia",
     status: "Completed",
+    type: "Work",
     description:
       "A web application that uses machine learning to detect Alzheimer's disease from MRI images.",
     tags: ["Next.js", "Tailwind", "Python"],
@@ -141,6 +201,7 @@ const projects = [
   {
     title: "Project Alzheimer",
     status: "Upcoming",
+    type: "project",
     description:
       "A web application that uses machine learning to detect Alzheimer's disease from MRI images.",
     tags: ["Python", "Machine Learning"],
