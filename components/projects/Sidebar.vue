@@ -122,26 +122,6 @@
       </div>
     </div>
 
-    <!-- Collapsed State Icons -->
-    <div v-if="isCollapsed && !isHovered" class="space-y-4 mt-8">
-      <div
-        v-for="(project, index) in projects"
-        :key="project.title"
-        class="group cursor-pointer transition-all duration-200 p-2 rounded-lg hover:bg-white/10"
-        :class="{
-          'bg-white/10': selectedProject === project.title,
-        }"
-        @click="selectProject(project.title)"
-        :title="project.title"
-      >
-        <div
-          class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center"
-        >
-          <span class="text-primary font-bold text-sm">{{ index + 1 }}</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Back to Home Button (Bottom) -->
     <div
       class="mt-auto pt-6 transition-all duration-300"
