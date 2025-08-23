@@ -41,25 +41,8 @@
       </p>
     </div>
 
-    <!-- Back to Home Button -->
-    <div
-      class="mb-6 transition-all duration-300"
-      :class="{ 'opacity-0': isCollapsed && !isHovered }"
-    >
-      <button
-        @click="goToHome"
-        class="w-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-3 group"
-      >
-        <Icon
-          name="mdi:home"
-          class="w-5 h-5 group-hover:scale-110 transition-transform duration-200"
-        />
-        <span class="font-medium">Back to Home</span>
-      </button>
-    </div>
-
     <!-- Projects List -->
-    <div class="overflow-auto h-[calc(100vh-140px)] pr-2">
+    <div class="overflow-auto h-[calc(100vh-200px)] pr-2">
       <!-- Work Section -->
       <div v-if="workProjects.length > 0" class="mb-6">
         <h3
@@ -158,6 +141,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Back to Home Button (Bottom) -->
+    <div
+      class="mt-auto pt-6 transition-all duration-300"
+      :class="{ 'opacity-0': isCollapsed && !isHovered }"
+    >
+      <button
+        @click="goToHome"
+        class="w-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-3 group"
+      >
+        <Icon
+          name="mdi:home"
+          class="w-5 h-5 group-hover:scale-110 transition-transform duration-200"
+        />
+        <span class="font-medium">Back to Home</span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -187,6 +187,19 @@ const projectProjects = computed(() =>
 );
 
 const projects = [
+  {
+    title: "Abunai",
+    status: "Completed",
+    type: "project",
+    description:
+      "A pioneering chatbot system in Mongolia, designed to provide natural language interactions for Mongolian users at a time when ChatGPT had no native support for the language.",
+    tags: [
+      "React",
+      "ChatGPT API",
+      "Google Translation API",
+      "Mongolian Language",
+    ],
+  },
   {
     title: "Beautifull Done",
     status: "On process",
