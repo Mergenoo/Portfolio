@@ -10,11 +10,13 @@
     <!-- Project Cards -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div
-        v-for="(project, i) in projects"
+        v-for="(project, i) in displayedProjects"
         :key="i"
         class="bg-white/5 border border-white/10 rounded-xl p-6 text-left hover:shadow-xl transition"
       >
-        <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+        </div>
         <p class="text-gray-400 text-sm mb-4">{{ project.description }}</p>
 
         <!-- Tech stack tags -->
@@ -28,6 +30,20 @@
           </span>
         </div>
       </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-12">
+      <button
+        @click="router.push('/projects')"
+        class="bg-primary hover:bg-primary/80 text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 flex items-center gap-3 mx-auto"
+      >
+        <Icon
+          :name="showAllProjects ? 'mdi:eye-off' : 'mdi:eye'"
+          class="w-5 h-5"
+        />
+        {{ showAllProjects ? "Show Completed Only" : "View All Projects" }}
+      </button>
     </div>
 
     <!-- Seamless Skill Marquee -->
@@ -70,25 +86,48 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const showAllProjects = ref(false);
+
 const projects = [
   {
     title: "Abunai",
+    status: "Completed",
     description:
       "AI-powered chatbot in Mongolian, built with React and OpenAI's GPT API.  It understands and responds in Mongolian, offering real-time conversation support with a simple, accessible UI. Integrated with Google APIs for additional context and personalization.",
-
     tags: ["React", "CSS", "OpenAI API", "Google API"],
   },
   {
     title: "Ebuuhia",
+    status: "Completed",
     description:
       "Delivery system platform developed with Next.js and MySQL. Handles order placement, tracking, and management with RESTful APIs and a responsive UI powered by Tailwind CSS. Designed for scalability and efficiency in logistics handling.",
     tags: ["Next.js", "Tailwind", "RESTful API", "MySQL"],
   },
   {
     title: "DDAM",
+    status: "Completed",
     description:
       "Client PDF tracker with annotation and sync functionality. Built with Nuxt and RESTful API integration, DDAM allows users to upload, save, and highlight PDF documents. It syncs updates in real time using Google APIs for a seamless client experience.",
     tags: ["Nuxt", "Tailwind", "RESTful API", "Google API"],
+  },
+  {
+    title: "Beautifully Done",
+    status: "On process",
+    description:
+      "An AI-powered web application designed to transform existing ecommerce sites into visually stunning, modern Shopify stores.",
+    tags: ["Nuxt", "Tailwind", "AI/ML", "Shopify", "Automation"],
+  },
+  {
+    title: "Alzheimer Project",
+    status: "Upcoming",
+    description:
+      "A smart assistive system that uses face recognition technology to help individuals with Alzheimer's disease remember people they meet.",
+    tags: ["Vue", "Nuxt", "Computer Vision", "AI/ML", "Healthcare"],
   },
 ];
 
@@ -108,4 +147,17 @@ const logos = [
   "logos:github-icon",
   "logos:react",
 ];
+
+// Filter projects based on status
+const completedProjects = computed(() => {
+  return projects.filter((p) => p.status === "Completed");
+});
+
+const displayedProjects = computed(() => {
+  return showAllProjects.value ? projects : completedProjects.value;
+});
+
+const toggleShowAll = () => {
+  showAllProjects.value = !showAllProjects.value;
+};
 </script>

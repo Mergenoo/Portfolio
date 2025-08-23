@@ -176,21 +176,24 @@
           </div>
         </div>
 
-        <!-- Experience Stats -->
+        <!-- Session Stats -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Project Stats</h3>
-          <div class="space-y-3">
-            <div class="flex justify-between">
-              <span class="text-gray-400">Status</span>
-              <span class="text-yellow-400">Completed</span>
+          <h3 class="text-lg font-semibold text-white mb-6">Session Stats</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-6">
+              <span class="text-white/70 min-w-[90px]">Format</span>
+              <span class="text-white">Hands-on Workshop</span>
             </div>
-            <div class="flex justify-between">
-              <span class="text-gray-400">Type</span>
-              <span class="text-white">AI-Powered SaaS</span>
+            <div class="flex items-start gap-6">
+              <span class="text-white/70 min-w-[90px]">Focus</span>
+              <div class="text-white">
+                <div>Text + Image</div>
+                <div>Generative AI</div>
+              </div>
             </div>
-            <div class="flex justify-between">
-              <span class="text-gray-400">Duration</span>
-              <span class="text-white">1 month</span>
+            <div class="flex items-start gap-6">
+              <span class="text-white/70 min-w-[90px]">Outcome</span>
+              <span class="text-white">Practical demos & workflows</span>
             </div>
           </div>
         </div>
