@@ -188,6 +188,19 @@ const projectProjects = computed(() =>
 
 const projects = [
   {
+    title: "Abunai",
+    status: "Completed",
+    type: "project",
+    description:
+      "A pioneering chatbot system in Mongolia, designed to provide natural language interactions for Mongolian users at a time when ChatGPT had no native support for the language.",
+    tags: [
+      "React",
+      "ChatGPT API",
+      "Google Translation API",
+      "Mongolian Language",
+    ],
+  },
+  {
     title: "Beautifull Done",
     status: "On process",
     type: "project",

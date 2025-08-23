@@ -24,6 +24,9 @@
       <!-- Ebuuhia -->
       <projectEbuuhia v-else-if="selectedProject.title === 'Ebuuhia'" />
 
+      <!-- Abunai -->
+      <projectAbunai v-else-if="selectedProject.title === 'Abunai'" />
+
       <!-- Project Alzheimer -->
       <projectAlzheimer
         v-else-if="selectedProject.title === 'Project Alzheimer'"
@@ -160,7 +163,9 @@ import { computed } from "vue";
 import projectBeautifullDone from "./projectBeautifullDone.vue";
 import projectDDAM from "./projectDDAM.vue";
 import projectEbuuhia from "./projectEbuuhia.vue";
+import projectAbunai from "./projectAbunai.vue";
 import projectAlzheimer from "./upcoming/projectAlzheimer.vue";
+
 
 const props = defineProps({
   selectedProject: {
@@ -202,6 +207,12 @@ const getProjectFeatures = (projectTitle) => {
       "Performance optimization",
       "Cross-platform compatibility",
       "Scalable backend infrastructure",
+    ],
+    Abunai: [
+      "Mongolian language support",
+      "ChatGPT API integration",
+      "Google Translation API",
+      "Natural language processing",
     ],
     "Project Alzheimer": [
       "AI-powered diagnostic tools",
