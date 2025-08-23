@@ -41,6 +41,23 @@
       </p>
     </div>
 
+    <!-- Back to Home Button -->
+    <div
+      class="mb-6 transition-all duration-300"
+      :class="{ 'opacity-0': isCollapsed && !isHovered }"
+    >
+      <button
+        @click="goToHome"
+        class="w-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-3 group"
+      >
+        <Icon
+          name="mdi:home"
+          class="w-5 h-5 group-hover:scale-110 transition-transform duration-200"
+        />
+        <span class="font-medium">Back to Home</span>
+      </button>
+    </div>
+
     <!-- Projects List -->
     <div class="overflow-auto h-[calc(100vh-140px)] pr-2">
       <!-- Work Section -->
@@ -146,6 +163,9 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const props = defineProps({
   selectedProject: {
@@ -216,6 +236,10 @@ const selectProject = (projectTitle) => {
   if (isCollapsed.value === false) {
     isCollapsed.value = true;
   }
+};
+
+const goToHome = () => {
+  router.push("/");
 };
 
 const toggleSidebar = () => {

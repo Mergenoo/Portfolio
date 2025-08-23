@@ -27,9 +27,9 @@
       <div class="flex items-center gap-4 mb-4">
         <h1 class="text-4xl font-bold text-white">Ebuuhia</h1>
         <span
-          class="px-3 py-1 text-sm font-medium rounded-full bg-yellow-500/20 text-yellow-500 border border-yellow-500/30"
+          class="px-3 py-1 text-sm font-medium rounded-full bg-green-500/20 text-green-500 border border-green-500/30"
         >
-          Ongoing
+          Completed
         </span>
       </div>
       <p class="text-xl text-gray-300 leading-relaxed">
@@ -234,7 +234,7 @@
           <div class="space-y-3">
             <div class="flex justify-between">
               <span class="text-gray-400">Status</span>
-              <span class="text-yellow-400">Ongoing</span>
+              <span class="text-green-500">Completed</span>
             </div>
             <div class="flex justify-between">
               <span class="text-gray-400">Type</span>
