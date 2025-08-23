@@ -3,17 +3,19 @@
     <!-- Image Modal -->
     <div
       v-if="showModal"
-      class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+      class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 overflow-auto"
       @click="closeModal"
     >
-      <div class="relative max-w-7xl w-full">
+      <div
+        class="relative max-w-7xl w-full min-h-full flex items-center justify-center"
+      >
         <img
           :src="selectedImage"
           :alt="selectedImage"
-          class="w-full h-auto rounded-lg"
+          class="w-full h-auto rounded-lg max-h-none"
         />
         <button
-          class="absolute top-4 right-4 text-white/80 hover:text-white"
+          class="absolute top-4 right-4 text-white/80 hover:text-white z-10"
           @click="closeModal"
         >
           <Icon name="mdi:close" class="w-8 h-8" />
@@ -61,20 +63,6 @@
           </div>
 
           <!-- Image Gallery -->
-          <div class="grid grid-cols-3 gap-4 mt-4">
-            <div
-              v-for="(image, index) in projectImages"
-              :key="index"
-              class="bg-white/5 border border-white/10 rounded-lg h-32 overflow-hidden cursor-pointer hover:border-primary/50 transition-colors duration-200"
-              @click="openModal(image.src)"
-            >
-              <img
-                :src="image.src"
-                :alt="image.alt"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
         </div>
 
         <!-- Features -->
