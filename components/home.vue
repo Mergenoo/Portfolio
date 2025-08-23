@@ -39,25 +39,29 @@
     <!-- Chat Container Box (only shown when there's chat history) -->
     <div v-if="chatHistory.length > 0" class="w-full max-w-2xl mb-8 z-10">
       <div
-        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-xl"
+        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 shadow-2xl transform transition-all duration-500 ease-out"
+        :class="
+          chatHistory.length > 0 ? 'animate-in slide-in-from-bottom-4' : ''
+        "
       >
         <!-- Chat Messages -->
         <div
           ref="chatMessages"
-          class="space-y-4 text-left mb-6 min-h-[200px] max-h-[300px] overflow-y-auto"
+          class="space-y-6 text-left mb-8 min-h-[200px] max-h-[400px] overflow-y-auto scrollbar-hide"
         >
           <div
             v-for="(message, index) in chatHistory"
             :key="index"
-            class="flex gap-3"
+            class="flex gap-4 animate-in slide-in-from-bottom-2"
+            :style="{ animationDelay: `${index * 100}ms` }"
             :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
           >
             <div
-              class="max-w-[85%] p-3 rounded-xl backdrop-blur-sm"
+              class="max-w-[80%] p-4 rounded-2xl backdrop-blur-sm relative transform transition-all duration-300 hover:scale-[1.02]"
               :class="
                 message.role === 'user'
-                  ? 'bg-primary/20 border border-primary/30 text-white'
-                  : 'bg-white/10 border border-white/20 text-white'
+                  ? 'bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 text-white shadow-lg shadow-primary/10'
+                  : 'bg-gradient-to-br from-white/10 to-white/5 border border-white/20 text-white shadow-lg'
               "
             >
               <div
@@ -68,19 +72,24 @@
           </div>
 
           <!-- Typing Indicator -->
-          <div v-if="isTyping" class="flex gap-3 justify-start">
+          <div
+            v-if="isTyping"
+            class="flex gap-4 justify-start animate-in slide-in-from-bottom-2"
+          >
             <div
-              class="max-w-[85%] p-3 rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 text-white"
+              class="max-w-[80%] p-4 rounded-2xl backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 border border-white/20 text-white shadow-lg"
             >
-              <div class="flex items-center gap-1">
-                <div class="w-1 h-1 bg-white rounded-full animate-bounce"></div>
+              <div class="flex items-center gap-2">
                 <div
-                  class="w-1 h-1 bg-white rounded-full animate-bounce"
-                  style="animation-delay: 0.1s"
+                  class="w-2 h-2 bg-primary rounded-full animate-pulse"
                 ></div>
                 <div
-                  class="w-1 h-1 bg-white rounded-full animate-bounce"
+                  class="w-2 h-2 bg-primary rounded-full animate-pulse"
                   style="animation-delay: 0.2s"
+                ></div>
+                <div
+                  class="w-2 h-2 bg-primary rounded-full animate-pulse"
+                  style="animation-delay: 0.4s"
                 ></div>
               </div>
             </div>
@@ -88,14 +97,18 @@
         </div>
 
         <!-- Input Area -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-3">
           <div class="relative flex-1 group">
             <input
               v-model="message"
               placeholder="Ask me anything..."
-              class="w-full py-3 px-4 border rounded-xl border-white/20 bg-white/5 backdrop-blur-sm text-white placeholder-gray-400 outline-none transition-all duration-200 focus:border-primary/50 focus:bg-white/10 group-hover:border-white/30"
+              class="w-full py-4 px-6 border rounded-2xl border-white/20 bg-white/5 backdrop-blur-sm text-white placeholder-gray-400 outline-none transition-all duration-300 focus:border-primary/50 focus:bg-white/10 focus:ring-2 focus:ring-primary/20 group-hover:border-white/30 group-hover:bg-white/8"
               @keydown.enter.prevent="sendMessage"
+              style="caret-color: white"
             />
+            <div
+              class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
           </div>
           <button
             @click="sendMessage"
@@ -132,7 +145,7 @@
           class="w-full py-4 px-6 border rounded-full border-white/20 bg-white/5 backdrop-blur-sm text-white placeholder-gray-400 resize-none outline-none transition-all duration-300 focus:border-primary/50 focus:bg-white/10 focus:ring-2 focus:ring-primary/20 group-hover:border-white/30 group-hover:bg-white/8"
           rows="1"
           @keydown.enter.prevent="sendMessage"
-          style="line-height: 1.5"
+          style="line-height: 1.5; caret-color: white"
         ></textarea>
         <div
           class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -262,3 +275,45 @@ const sendMessage = async () => {
   }
 };
 </script>
+
+<style scoped>
+/* Custom scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation classes */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideInFromBottom 0.5s ease-out forwards;
+}
+
+.slide-in-from-bottom-2 {
+  animation-delay: 0.1s;
+}
+
+.slide-in-from-bottom-4 {
+  animation-delay: 0.2s;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
