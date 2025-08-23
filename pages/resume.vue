@@ -1,12 +1,36 @@
 <template>
   <section class="bg-black text-white py-24 px-6 min-h-screen">
+    <!-- Image Modal -->
+    <div
+      v-if="showModal"
+      class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 overflow-auto"
+      @click="closeModal"
+    >
+      <div
+        class="relative max-w-7xl w-full min-h-full flex items-center justify-center"
+      >
+        <img
+          :src="selectedImage"
+          :alt="selectedImage"
+          class="w-full h-auto rounded-lg max-h-none"
+        />
+        <button
+          class="absolute top-4 right-4 text-white/80 hover:text-white z-10"
+          @click="closeModal"
+        >
+          <Icon name="mdi:close" class="w-8 h-8" />
+        </button>
+      </div>
+    </div>
+
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
       <!-- 📸 Resume as Image -->
       <div class="w-full">
         <img
           src="/images/resume.jpg"
           alt="My Resume"
-          class="w-full rounded-lg shadow-lg border border-white/10"
+          class="w-full rounded-lg shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300"
+          @click="openModal('/images/resume.jpg')"
         />
       </div>
 
@@ -40,6 +64,27 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+
+// Modal state
+const showModal = ref(false);
+const selectedImage = ref("");
+
+// Modal functions
+const openModal = (imageSrc: string) => {
+  selectedImage.value = imageSrc;
+  showModal.value = true;
+  // Prevent body scroll when modal is open
+  document.body.style.overflow = "hidden";
+};
+
+const closeModal = () => {
+  showModal.value = false;
+  selectedImage.value = "";
+  // Restore body scroll
+  document.body.style.overflow = "auto";
+};
+
 const experiences = [
   {
     title: "Software Developer",
@@ -64,3 +109,16 @@ const experiences = [
   },
 ];
 </script>
+
+<style scoped>
+/* Optional: Add fade transition for modal */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+</style>
