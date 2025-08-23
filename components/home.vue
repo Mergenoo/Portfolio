@@ -37,42 +37,41 @@
     </div>
 
     <!-- Chat Container Box (only shown when there's chat history) -->
-    <div v-if="chatHistory.length > 0" class="w-full max-w-4xl mb-8 z-10">
+    <div v-if="chatHistory.length > 0" class="w-full max-w-2xl mb-8 z-10">
       <div
-        class="bg-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-2xl"
+        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-xl"
       >
         <!-- Chat Messages -->
         <div
           ref="chatMessages"
-          class="space-y-6 text-left mb-8 min-h-[300px] max-h-[300px] overflow-y-auto"
+          class="space-y-4 text-left mb-6 min-h-[200px] max-h-[300px] overflow-y-auto"
         >
           <div
             v-for="(message, index) in chatHistory"
             :key="index"
-            class="flex gap-4"
+            class="flex gap-3"
             :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
           >
             <div
-              class="max-w-[80%] p-4 rounded-2xl backdrop-blur-sm"
+              class="max-w-[85%] p-3 rounded-xl backdrop-blur-sm"
               :class="
                 message.role === 'user'
                   ? 'bg-primary/20 border border-primary/30 text-white'
                   : 'bg-white/10 border border-white/20 text-white'
               "
             >
-              <p class="text-sm opacity-70 mb-1">
-                {{ message.role === "user" ? "You" : "Mergen" }}
-              </p>
-              <p class="whitespace-pre-wrap">{{ message.content }}</p>
+              <div
+                class="text-sm leading-relaxed"
+                v-html="formatMessage(message.content)"
+              ></div>
             </div>
           </div>
 
           <!-- Typing Indicator -->
-          <div v-if="isTyping" class="flex gap-4 justify-start">
+          <div v-if="isTyping" class="flex gap-3 justify-start">
             <div
-              class="max-w-[80%] p-4 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 text-white"
+              class="max-w-[85%] p-3 rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 text-white"
             >
-              <p class="text-sm opacity-70 mb-1">Mergen</p>
               <div class="flex items-center gap-1">
                 <div class="w-1 h-1 bg-white rounded-full animate-bounce"></div>
                 <div
@@ -87,21 +86,16 @@
             </div>
           </div>
         </div>
-        <div
-          class="flex items-center justify-center gap-3 w-full max-w-2xl mx-auto"
-        >
+
+        <!-- Input Area -->
+        <div class="flex items-center gap-2">
           <div class="relative flex-1 group">
-            <textarea
+            <input
               v-model="message"
               placeholder="Ask me anything..."
-              class="w-full py-4 px-6 border rounded-full border-white/20 bg-white/5 backdrop-blur-sm text-white placeholder-gray-400 resize-none outline-none transition-all duration-300 focus:border-primary/50 focus:bg-white/10 focus:ring-2 focus:ring-primary/20 group-hover:border-white/30 group-hover:bg-white/8"
-              rows="1"
+              class="w-full py-3 px-4 border rounded-xl border-white/20 bg-white/5 backdrop-blur-sm text-white placeholder-gray-400 outline-none transition-all duration-200 focus:border-primary/50 focus:bg-white/10 group-hover:border-white/30"
               @keydown.enter.prevent="sendMessage"
-              style="line-height: 1.5"
-            ></textarea>
-            <div
-              class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-            ></div>
+            />
           </div>
           <button
             @click="sendMessage"
@@ -193,6 +187,14 @@ const chatHistory = ref<Array<{ role: "user" | "assistant"; content: string }>>(
 );
 const chatMessages = ref<HTMLElement | null>(null);
 const isTyping = ref(false);
+
+const formatMessage = (content: string) => {
+  // Convert markdown-style links to HTML links
+  return content.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" class="text-primary hover:text-primary/80 underline transition-colors">$1</a>'
+  );
+};
 
 const sendMessage = async () => {
   if (!message.value.trim()) return;
