@@ -31,9 +31,6 @@
         I am Mergen Ochirsukh,<br />
         a software developer.
       </h1>
-      <p class="text-xl text-gray-300 mb-4">
-        I try to create clean, interactive, user-first digital experiences
-      </p>
     </div>
 
     <!-- CTA Buttons -->
