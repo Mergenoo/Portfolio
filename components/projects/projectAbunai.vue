@@ -225,21 +225,6 @@
           </div>
         </div>
 
-        <!-- Project Links -->
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Project Links</h3>
-          <div class="space-y-3">
-            <a
-              href="#"
-              target="_blank"
-              class="flex items-center gap-3 p-3 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors"
-            >
-              <Icon name="mdi:open-in-new" class="w-5 h-5" />
-              <span>Project Demo</span>
-            </a>
-          </div>
-        </div>
-
         <!-- Project Stats -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
           <h3 class="text-lg font-semibold text-white mb-4">Project Stats</h3>
