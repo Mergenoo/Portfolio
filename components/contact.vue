@@ -35,7 +35,7 @@
               <Icon name="mdi:github" class="w-8 h-8" />
             </a>
             <a
-              href="https://linkedin.com/in/mergen-ochirsukh"
+              href="https://www.linkedin.com/in/mergenoo/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-white hover:text-primary transition-colors duration-300"
