@@ -181,6 +181,21 @@ const projects = [
     ],
   },
   {
+    title: "Syllaby",
+    status: "Completed",
+    type: "project",
+    description:
+      "Takes syllabus from user to generate deadlines of every importand dates on calendar with the help of AI",
+    tags: [
+      "Nuxt",
+      "Tailwind",
+      "Python",
+      "Machine Learning",
+      "Generative AI",
+      "OpenAI API",
+    ],
+  },
+  {
     title: "Beautifull Done",
     status: "On process",
     type: "project",

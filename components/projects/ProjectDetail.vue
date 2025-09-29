@@ -31,6 +31,8 @@
       <projectAlzheimer
         v-else-if="selectedProject.title === 'Project Alzheimer'"
       />
+      <!-- Project Syllaby -->
+      <projectSyllaby v-else-if="selectedProject.title === 'Syllaby'" />
 
       <!-- Fallback for unknown projects -->
       <div v-else class="max-w-4xl mx-auto">
@@ -165,7 +167,7 @@ import projectDDAM from "./projectDDAM.vue";
 import projectEbuuhia from "./projectEbuuhia.vue";
 import projectAbunai from "./projectAbunai.vue";
 import projectAlzheimer from "./upcoming/projectAlzheimer.vue";
-
+import projectSyllaby from "./projectSyllaby.vue";
 
 const props = defineProps({
   selectedProject: {
@@ -219,6 +221,12 @@ const getProjectFeatures = (projectTitle) => {
       "Medical image analysis",
       "Clinical decision support",
       "Research collaboration features",
+    ],
+    "Project Syllaby": [
+      "AI-powered calendar generator",
+      "Syllabus parsing",
+      "Calendar visualization",
+      "User-friendly interface",
     ],
   };
 
