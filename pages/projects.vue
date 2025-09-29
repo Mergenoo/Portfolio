@@ -37,6 +37,20 @@ const projects = [
     ],
   },
   {
+    title: "Syllaby",
+    status: "Completed",
+    description:
+      "A modern Next.js application designed to help law students manage their academic schedules by processing syllabus PDFs and automatically creating comprehensive calendars.",
+    tags: [
+      "Next.js",
+      "Supabase",
+      "Google Calendar API",
+      "AI/ML",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
     title: "Beautifull Done",
     status: "On process",
     description:
