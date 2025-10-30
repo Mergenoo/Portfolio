@@ -31,7 +31,7 @@
       <!-- Download Button -->
       <div class="text-center">
         <a
-          href="/images/Mergen_resume.pdf"
+          href="/images/resume_tavan_bogd.pdf"
           download
           class="inline-block px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition"
         >
@@ -45,25 +45,25 @@
 <script setup lang="ts">
 const experience = [
   {
-    role: "Software Developer",
+    role: "Software Engineer",
     company: "Dentsu Data Artist Mongolia",
-    period: "2024 — Present",
+    period: "2023 — 2024",
     description:
-      "Building interactive web apps with Nuxt, Vue, and Tailwind. Collaborating on design systems and micro-interactions.",
+      "Built AI-powered applications using Next.js and Vertex AI, including a movie recommendation system (10,000+ data points), smart golf mapping app, and marketing strategy analyzer with product similarity detection. Optimized performance with virtual scrolling (1.1s latency reduction) and PDF navigation tracking (40% UX improvement). Served 1,000+ daily users.",
+  },
+  {
+    role: "Software Engineer",
+    company: "Nest Education IT School",
+    period: "2022 — 2023",
+    description:
+      "Architected delivery management system with MySQL database processing 2,000+ daily deliveries and RESTful API handling 1,600+ transactions. Built real-time tracking dashboard for logistics operations. Achieved 80% increase in daily deliveries, 40% growth in sales, and 20% market expansion.",
   },
   {
     role: "Software Developer Intern",
     company: "Erxes",
-    period: "2024",
+    period: "2021",
     description:
-      "Contributed to the erxes open-source codebase. Worked on UI components, fixed bugs, and supported performance improvements within a collaborative team.",
-  },
-  {
-    role: "Algorithm Assistant Teacher, Homeroom Teacher",
-    company: "Nest Education IT School",
-    period: "2023 — 2025",
-    description:
-      "Taught JavaScript and C++ to high school students through project-based learning and real-world examples.",
+      "Developed ERP system modules for 100+ employees, including personal asset tracking and centralized template library. Improved productivity by 20% through streamlined document management processes.",
   },
 ];
 

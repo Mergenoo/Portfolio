@@ -27,7 +27,7 @@
       <!-- 📸 Resume as Image -->
       <div class="w-full">
         <img
-          src="/images/resume.jpg"
+          src="/images/resume_tavan_bogd.jpg"
           alt="My Resume"
           class="w-full rounded-lg shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300"
           @click="openModal('/images/resume.jpg')"
@@ -52,7 +52,7 @@
         </NuxtLink>
 
         <a
-          href="/images/Mergen_resume.pdf"
+          href="/images/resume_tavan_bogd.pdf"
           download
           class="inline-block mt-6 px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition"
         >
@@ -87,25 +87,25 @@ const closeModal = () => {
 
 const experiences = [
   {
-    title: "Software Developer",
+    title: "Software Engineer",
     company: "Dentsu Data Artist Mongolia",
-    period: "2024 — Present",
+    period: "2023 — 2024",
     description:
-      "Building interactive web applications using Nuxt, Vue, and Tailwind. Collaborating on design systems, micro-interactions, and contributing to scalable front-end architecture.",
+      "Built AI-powered applications using Next.js and Vertex AI, including a movie recommendation system (10,000+ data points), smart golf mapping app, and marketing strategy analyzer with product similarity detection. Optimized performance with virtual scrolling (1.1s latency reduction) and PDF navigation tracking (40% UX improvement). Served 1,000+ daily users.",
+  },
+  {
+    title: "Software Engineer",
+    company: "Nest Education IT School",
+    period: "2022 — 2023",
+    description:
+      "Architected delivery management system with MySQL database processing 2,000+ daily deliveries and RESTful API handling 1,600+ transactions. Built real-time tracking dashboard for logistics operations. Achieved 80% increase in daily deliveries, 40% growth in sales, and 20% market expansion.",
   },
   {
     title: "Software Developer Intern",
     company: "Erxes",
-    period: "2024",
+    period: "2021",
     description:
-      "Contributed to the open-source erxes platform. Focused on UI development, component design, bug fixing, and improving user experience in a collaborative agile environment.",
-  },
-  {
-    title: "Algorithm Assistant Teacher & Homeroom Teacher",
-    company: "Nest Education IT School",
-    period: "2023 — 2025",
-    description:
-      "Mentored high school students in JavaScript and C++, using real-world projects and hands-on problem solving to teach algorithmic thinking and web fundamentals.",
+      "Developed ERP system modules for 100+ employees, including personal asset tracking and centralized template library. Improved productivity by 20% through streamlined document management processes.",
   },
 ];
 </script>

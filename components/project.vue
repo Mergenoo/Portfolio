@@ -98,35 +98,35 @@ const projects = [
     title: "Abunai",
     status: "Completed",
     description:
-      "AI-powered chatbot in Mongolian, built with React and OpenAI's GPT API.  It understands and responds in Mongolian, offering real-time conversation support with a simple, accessible UI. Integrated with Google APIs for additional context and personalization.",
+      "AI-powered Mongolian chatbot using React and OpenAI GPT API with real-time conversation support and Google API integration for contextual responses.",
     tags: ["React", "CSS", "OpenAI API", "Google API"],
   },
   {
     title: "Ebuuhia",
     status: "Completed",
     description:
-      "Delivery system platform developed with Next.js and MySQL. Handles order placement, tracking, and management with RESTful APIs and a responsive UI powered by Tailwind CSS. Designed for scalability and efficiency in logistics handling.",
+      "Scalable delivery management platform with Next.js and MySQL. Features order tracking, RESTful APIs, and responsive Tailwind UI for efficient logistics operations.",
     tags: ["Next.js", "Tailwind", "RESTful API", "MySQL"],
   },
   {
     title: "DDAM",
     status: "Completed",
     description:
-      "Client PDF tracker with annotation and sync functionality. Built with Nuxt and RESTful API integration, DDAM allows users to upload, save, and highlight PDF documents. It syncs updates in real time using Google APIs for a seamless client experience.",
+      "PDF collaboration tool with real-time annotation and sync. Built with Nuxt and Google APIs for seamless document management and highlighting.",
     tags: ["Nuxt", "Tailwind", "RESTful API", "Google API"],
   },
   {
     title: "Beautifully Done",
     status: "On process",
     description:
-      "An AI-powered web application designed to transform existing ecommerce sites into visually stunning, modern Shopify stores.",
+      "AI-powered tool that transforms existing ecommerce sites into modern, visually stunning Shopify stores with automated design optimization.",
     tags: ["Nuxt", "Tailwind", "AI/ML", "Shopify", "Automation"],
   },
   {
     title: "Alzheimer Project",
     status: "Upcoming",
     description:
-      "A smart assistive system that uses face recognition technology to help individuals with Alzheimer's disease remember people they meet.",
+      "Smart assistive healthcare system using face recognition to help Alzheimer's patients identify and remember people they encounter.",
     tags: ["Vue", "Nuxt", "Computer Vision", "AI/ML", "Healthcare"],
   },
 ];
