@@ -11,7 +11,7 @@
       >
         <img
           :src="selectedImage"
-          :alt="selectedImage"
+          alt="My Resume"
           class="w-full h-auto rounded-lg max-h-none"
         />
         <button
@@ -24,7 +24,7 @@
     </div>
 
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-      <!-- 📸 Resume as Image -->
+      <!-- Resume as Image -->
       <div class="w-full">
         <img
           src="/images/resume.jpg"
@@ -34,19 +34,24 @@
         />
       </div>
 
-      <!-- 📌 Extra Experience -->
+      <!-- Experience -->
       <div class="space-y-12">
-        <h2 class="text-2xl font-bold text-primary">More About Me</h2>
-
-        <div v-for="(item, i) in experiences" :key="i" class="space-y-2">
-          <h3 class="text-lg font-semibold">{{ item.title }}</h3>
-          <p class="text-sm text-gray-400">{{ item.period }}</p>
-          <p class="text-sm text-gray-300">{{ item.description }}</p>
+        <div>
+          <h2 class="text-xl font-semibold mb-6 text-primary">Experience</h2>
+          <div v-for="(item, i) in experiences" :key="i" class="mb-8">
+            <h3 class="text-lg font-semibold text-white">
+              {{ item.role }} @ {{ item.company }}
+            </h3>
+            <p class="text-gray-400 text-sm mb-1">{{ item.period }}</p>
+            <p class="text-white text-sm leading-relaxed">
+              {{ item.description }}
+            </p>
+          </div>
         </div>
+
         <NuxtLink
           to="/"
-          download
-          class="inline-block mt-6 px-6 py-3 border bg-primary border-primary rounded-xl hover:opacity-9 transition mr-4"
+          class="inline-block mt-6 px-6 py-3 border bg-primary border-primary rounded-xl hover:opacity-90 transition mr-4"
         >
           Home
         </NuxtLink>
@@ -54,9 +59,17 @@
         <a
           href="/images/Mergen_resume.pdf"
           download
-          class="inline-block mt-6 px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition"
+          class="inline-block mt-6 px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition mr-4"
         >
-          Download My CV
+          Download CV (English)
+        </a>
+
+        <a
+          href="/images/Mergen_resume_mgl.pdf"
+          download
+          class="inline-block px-6 py-3 border border-primary text-primary rounded-xl hover:bg-primary hover:text-black transition"
+        >
+          Татах CV (Монгол)
         </a>
       </div>
     </div>
@@ -66,52 +79,47 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-// Modal state
 const showModal = ref(false);
 const selectedImage = ref("");
 
-// Modal functions
 const openModal = (imageSrc: string) => {
   selectedImage.value = imageSrc;
   showModal.value = true;
-  // Prevent body scroll when modal is open
   document.body.style.overflow = "hidden";
 };
 
 const closeModal = () => {
   showModal.value = false;
   selectedImage.value = "";
-  // Restore body scroll
   document.body.style.overflow = "auto";
 };
 
 const experiences = [
   {
-    title: "Software Developer",
+    role: "Software Engineer",
     company: "Dentsu Data Artist Mongolia",
-    period: "2024 — Present",
+    period: "Aug 2023 — Dec 2024",
     description:
-      "Building interactive web applications using Nuxt, Vue, and Tailwind. Collaborating on design systems, micro-interactions, and contributing to scalable front-end architecture.",
+      "Built AI movie recommendations, Next.js interfaces for generative AI, and Vertex AI marketing tools. Improved performance with virtual scrolling and PDF context tracking for thousands of daily users.",
   },
   {
-    title: "Software Developer Intern",
+    role: "Software Developer Intern",
     company: "Erxes",
-    period: "2024",
+    period: "2021",
     description:
-      "Contributed to the open-source erxes platform. Focused on UI development, component design, bug fixing, and improving user experience in a collaborative agile environment.",
+      "Contributed to the erxes open-source codebase. Worked on UI components, fixed bugs, and supported performance improvements within a collaborative team.",
   },
   {
-    title: "Algorithm Assistant Teacher & Homeroom Teacher",
-    company: "Nest Education IT School",
-    period: "2023 — 2025",
+    role: "Software Engineer",
+    company: "Nest Educational IT High School",
+    period: "Aug 2022 — Aug 2023",
     description:
-      "Mentored high school students in JavaScript and C++, using real-world projects and hands-on problem solving to teach algorithmic thinking and web fundamentals.",
+      "Developed MySQL delivery systems, Node.js REST APIs, and operational dashboards for 2,000+ daily orders. Delivered a delivery management web app that increased daily deliveries by 80%.",
   },
 ];
 </script>
 
 <style scoped>
-/* Optional: Add fade transition for modal */
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
